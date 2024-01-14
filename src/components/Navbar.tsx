@@ -42,7 +42,7 @@ const Navbar: FC<NavbarProps> = () => {
                   size: "sm",
                 })}
               >
-                Get startged <ArrowRight className="ml-1.5 h-5 w-5" />
+                Get started <ArrowRight className="ml-1.5 h-5 w-5" />
               </RegisterLink>
             </>
           </div>
