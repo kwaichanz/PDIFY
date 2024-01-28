@@ -8,18 +8,18 @@ import {
   RotateCw,
   SearchIcon,
 } from "lucide-react";
+import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
-import { useToast } from "./ui/use-toast";
 import { useResizeDetector } from "react-resize-detector";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { useState } from "react";
+import { useToast } from "./ui/use-toast";
 
+import { cn } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -186,7 +186,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             >
               {isLoading && renderedScale ? (
                 <Page
-                key={"@" + renderedScale}
+                  key={"@" + renderedScale}
                   width={width ? width : 1}
                   pageNumber={currPage}
                   scale={scale}
